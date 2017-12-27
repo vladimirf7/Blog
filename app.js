@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// mongoose.connect('mongodb://localhost/edu_blog');
-app.set('view engine', 'hbs');
+mongoose.connect('mongodb://localhost/edu_blog');
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,9 +23,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/blogs', (req, res) => {
-  res.render('index');
+  Blog.find({}, (err, blogs) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('index', { blogs });
+    }
+  });
 });
 
 app.listen(config.PORT, () => {
-  console.log(`Listening on http://localhost:${config.PORT}`)
+  console.log(`Listening on http://localhost:${config.PORT}`);
 });
