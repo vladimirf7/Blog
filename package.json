@@ -1,0 +1,34 @@
+{
+  "name": "EduBlog",
+  "version": "1.0.0",
+  "description": "This is an educational Blog project",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test/",
+    "lint": "eslint **.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirf7/EduBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimirf7/EduBlog/issues"
+  },
+  "homepage": "https://github.com/vladimirf7/EduBlog#readme",
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.13.7"
+  }
+}
